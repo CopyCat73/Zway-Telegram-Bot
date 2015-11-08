@@ -1,0 +1,22 @@
+{
+  "title": "Telegram Bot",
+  "description": "Telegram bot sends updates on your network and receives commands to control devices",
+  "bot_username": "Telegram username",
+  "bot_username_helper" : "Enter the telegram username you use to talk to your bot",
+  "bot_token": "Bot token",
+  "bot_token_helper" : "Enter the token received from the BotFather",
+  "triggerselection": "Trigger selection",
+  "triggerselection_helper" : "Select the devices that trigger a bot message",
+  "err_bot": "Telegram Bot Error",
+  "level_label" : "Level",
+  "off" : "Off",
+  "on" : "On",
+  "toggle" : "Toggle",
+  "equalto" : "Equal to",
+  "largerthan" : "Larger than",
+  "smallerthan" : "Smaller than",
+  "switches_label" : "Switch device triggers",
+  "multilevels_label" : "Multilevel device triggers",
+  "err_fetch_channel" : "Error fetching Telegram channel id",
+  "err_send_message" : "Error sending Telegram message"
+ }

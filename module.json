@@ -1,0 +1,152 @@
+{
+   "author" : "CopyCat73",
+   "category" : "environment",
+   "defaults" : {
+      "description" : "__description__",
+      "title" : "__title__"
+   },
+   "dependencies" : [],
+   "homepage" : "https://github.com/CopyCat73",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "TelegramBot",
+   "options" : {
+      "fields" : {
+         "bot_username" : {
+            "helper" : "__bot_username_helper__",
+            "label" : "__bot_username__",
+            "order" : 1
+         },
+         "bot_token" : {
+            "helper" : "__bot_token_helper__",
+            "label" : "__bot_token__",
+            "order" : 2
+         },
+         "switches" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_switchBinary:deviceName",
+                        "type" : "select"
+                     },
+                     "level" : {
+                        "label" : "",
+                        "optionLabels" : [
+                           "__off__",
+                           "__on__",
+                           "__toggle__"
+                        ]
+                     }
+                  }
+               }
+            },
+            "label" : "__switches_label__",
+            "order" : 3
+         },         
+         "multilevels" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_switchMultilevel:deviceName",
+                        "type" : "select"
+                     },
+                     "comparison" : {
+                        "label" : "",
+                        "optionLabels" : [
+                           "__equalto__",
+                           "__largerthan__",
+                           "__smallerthan__"
+                        ]
+                     },                     
+                     "level" : {
+                        "label" : "__level_label__"
+                     }
+                  }
+               }
+            },
+            "label" : "__multilevels_label__",
+            "order" : 4
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/CopyCat73/Zway-Telegram-Bot",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "bot_username" : {
+            "required" : true,
+            "type" : "string"
+         },
+         "bot_token" : {
+            "required" : true,
+            "type" : "string"
+         },
+         "switches" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_switchBinary:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  },
+                  "level" : {
+                     "enum" : [
+                        "off",
+                        "on",
+                        "toggle"
+                     ],
+                     "required" : true,
+                     "type" : "integer"
+                  }
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         },         
+         "multilevels" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_switchMultilevel:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  },
+                  "comparison" : {
+                     "enum" : [
+                        "equalto",
+                        "largerthan",
+                        "smallerthan"
+                     ],
+                     "required" : true,
+                     "type" : "integer"
+                  },                  
+                  "level" : {
+                     "maximum" : 99,
+                     "minimum" : 0,
+                     "required" : true,
+                     "type" : "integer"
+                  }
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         }
+      },
+      "required" : true,
+      "type" : "object"
+   },
+   "singleton" : true,
+   "version" : "1.00"
+}
