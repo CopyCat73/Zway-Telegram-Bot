@@ -16,7 +16,8 @@
   "largerthan" : "Larger than",
   "smallerthan" : "Smaller than",
   "switches_label" : "Switch device triggers",
-  "multilevels_label" : "Multilevel device triggers",
+  "multilevelsensors_label" : "Multilevel sensor triggers",
+  "multilevelswitches_label" : "Multilevel switch triggers",
   "err_fetch_channel" : "Error fetching Telegram channel id",
   "err_send_message" : "Error sending Telegram message"
  }

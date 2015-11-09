@@ -77,7 +77,7 @@ TelegramBot.prototype.updateDeviceState = function(vDev) {
         }
     });
     
-    _.each(self.config.multilevels,function(element) {
+    _.each(self.config.multilevelswitches,function(element) {
         if (element.device == vDev.id) {
             switch (element.comparison) {
                 case 'equalto':
@@ -98,7 +98,27 @@ TelegramBot.prototype.updateDeviceState = function(vDev) {
             }
         }
     });
-
+    _.each(self.config.multilevelsensors,function(element) {
+        if (element.device == vDev.id) {
+            switch (element.comparison) {
+                case 'equalto':
+                    if (vDev.get('metrics:level') == element.level) {
+                         self.sendMessage(vDev.get('deviceType'),vDev.get('metrics:title'),vDev.get('metrics:level'));
+                    }
+                    break;
+                case 'largerthan':
+                    if (vDev.get('metrics:level') > element.level) {
+                         self.sendMessage(vDev.get('deviceType'),vDev.get('metrics:title'),vDev.get('metrics:level'));
+                    }
+                    break;
+                case 'smallerthan':
+                    if (vDev.get('metrics:level') < element.level) {
+                         self.sendMessage(vDev.get('deviceType'),vDev.get('metrics:title'),vDev.get('metrics:level'));
+                    }
+                    break;
+            }
+        }
+    });
 };
 
 TelegramBot.prototype.sendMessage = function(dType, dName , dStatus) {

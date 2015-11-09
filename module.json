@@ -47,7 +47,7 @@
             "label" : "__switches_label__",
             "order" : 3
          },         
-         "multilevels" : {
+         "multilevelswitches" : {
             "fields" : {
                "item" : {
                   "fields" : {
@@ -72,8 +72,36 @@
                   }
                }
             },
-            "label" : "__multilevels_label__",
+            "label" : "__multilevelswitches_label__",
             "order" : 4
+         },
+         "multilevelsensors" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_sensorMultilevel:deviceName",
+                        "type" : "select"
+                     },
+                     "comparison" : {
+                        "label" : "",
+                        "optionLabels" : [
+                           "__equalto__",
+                           "__largerthan__",
+                           "__smallerthan__"
+                        ]
+                     },                     
+                     "level" : {
+                        "label" : "__level_label__"
+                     }
+                  }
+               }
+            },
+            "label" : "__multilevelsensors_label__",
+            "order" : 5
          }
       }
    },
@@ -114,7 +142,7 @@
             },
             "type" : "array"
          },         
-         "multilevels" : {
+         "multilevelswitches" : {
             "items" : {
                "properties" : {
                   "device" : {
@@ -142,7 +170,34 @@
                "type" : "object"
             },
             "type" : "array"
-         }
+         },
+         "multilevelsensors" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_sensorMultilevel:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  },
+                  "comparison" : {
+                     "enum" : [
+                        "equalto",
+                        "largerthan",
+                        "smallerthan"
+                     ],
+                     "required" : true,
+                     "type" : "integer"
+                  },                  
+                  "level" : {
+                     "required" : true,
+                     "type" : "integer"
+                  }
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         }         
       },
       "required" : true,
       "type" : "object"
