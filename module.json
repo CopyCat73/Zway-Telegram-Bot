@@ -12,15 +12,25 @@
    "moduleName" : "TelegramBot",
    "options" : {
       "fields" : {
-         "bot_username" : {
-            "helper" : "__bot_username_helper__",
-            "label" : "__bot_username__",
+         "username" : {
+            "helper" : "__username_helper__",
+            "label" : "__username__",
             "order" : 1
          },
          "bot_token" : {
             "helper" : "__bot_token_helper__",
             "label" : "__bot_token__",
             "order" : 2
+         },
+         "chat_id" : {
+            "helper" : "__chat_id_helper__",
+            "label" : "__chat_id__",
+            "order" : 3
+         },
+         "webhook_url" : {
+            "helper" : "__webhook_url_helper__",
+            "label" : "__webhook_url__",
+            "order" : 4
          },
          "switches" : {
             "fields" : {
@@ -45,7 +55,7 @@
                }
             },
             "label" : "__switches_label__",
-            "order" : 3
+            "order" : 5
          },         
          "multilevelswitches" : {
             "fields" : {
@@ -73,7 +83,7 @@
                }
             },
             "label" : "__multilevelswitches_label__",
-            "order" : 4
+            "order" : 6
          },
          "multilevelsensors" : {
             "fields" : {
@@ -101,7 +111,7 @@
                }
             },
             "label" : "__multilevelsensors_label__",
-            "order" : 5
+            "order" : 7
          }
       }
    },
@@ -111,12 +121,20 @@
    },
    "schema" : {
       "properties" : {
-         "bot_username" : {
+         "username" : {
             "required" : true,
             "type" : "string"
          },
          "bot_token" : {
             "required" : true,
+            "type" : "string"
+         },
+         "chat_id" : {
+            "required" : false,
+            "type" : "string"
+         },
+         "webhook_url" : {
+            "required" : false,
             "type" : "string"
          },
          "switches" : {

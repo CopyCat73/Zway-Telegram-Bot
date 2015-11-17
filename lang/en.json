@@ -1,10 +1,14 @@
 {
   "title": "Telegram Bot",
   "description": "Telegram bot sends updates on your network and receives commands to control devices",
-  "bot_username": "Telegram username",
-  "bot_username_helper" : "Enter the telegram username you use to talk to your bot",
+  "username": "Telegram username",
+  "username_helper" : "Enter your Telegram username",
   "bot_token": "Bot token",
   "bot_token_helper" : "Enter the token received from the BotFather",
+  "chat_id": "Chat ID",
+  "chat_id_helper" : "Leave this field empty, it will be filled automatically",
+  "webhook_url": "Webhook url",
+  "webhook_url_helper" : "Enter your webhook url. Telegram recommends https://www.example.com/yourbottoken",
   "triggerselection": "Trigger selection",
   "triggerselection_helper" : "Select the devices that trigger a bot message",
   "err_bot": "Telegram Bot Error",
@@ -18,6 +22,13 @@
   "switches_label" : "Switch device triggers",
   "multilevelsensors_label" : "Multilevel sensor triggers",
   "multilevelswitches_label" : "Multilevel switch triggers",
+  "help_text" : "Supported commands are: \n \n /help: shows this message. \n /home: presence control.\n /scene: activate a scene.\n /device: switch a device.\n /sensor: request sensor reading.",
+  "select_presence" : "Select a presence mode",
+  "select_device" : "Select a device",
+  "set_device" : "Set device",
+  "unknown_command" : "Please start by giving me a command.\nType /help for a list of valid commands.",
+  "select_room" : "Please select a room.",
   "err_fetch_channel" : "Error fetching Telegram channel id",
-  "err_send_message" : "Error sending Telegram message"
+  "err_send_message" : "Error sending Telegram message",
+  "err_unknown_command" : "I'm sorry, I don't know this command"
  }
