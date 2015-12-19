@@ -20,6 +20,7 @@
   "largerthan" : "Larger than",
   "smallerthan" : "Smaller than",
   "switches_label" : "Switch device triggers",
+  "binarysensors_label" : "Binary sensor triggers",
   "multilevelsensors_label" : "Multilevel sensor triggers",
   "multilevelswitches_label" : "Multilevel switch triggers",
   "help_text" : "Supported commands are: \n \n /help: shows this message. \n /home: presence control.\n /scene: activate a scene.\n /device: switch a device.\n /sensor: request sensor reading.",

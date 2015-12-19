@@ -140,6 +140,18 @@ TelegramBot.prototype.updateDeviceState = function(vDev) {
             }
         }
     });
+    
+    _.each(self.config.binarysensors,function(element) {
+        if(element.device == vDev.id) {
+            if (element.level=='toggle') {
+                self.composeMessage(vDev.get('deviceType'),vDev.get('metrics:title'),vDev.get('metrics:level'));
+            }
+            else if (vDev.get('metrics:level') == element.level) {
+                 self.composeMessage(vDev.get('deviceType'),vDev.get('metrics:title'),vDev.get('metrics:level'));
+            }
+        }
+    });
+    
     _.each(self.config.multilevelsensors,function(element) {
         if (element.device == vDev.id) {
             switch (element.comparison) {

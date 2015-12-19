@@ -112,7 +112,32 @@
             },
             "label" : "__multilevelsensors_label__",
             "order" : 7
-         }
+         },
+         "binarysensors" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_sensorBinary:deviceName",
+                        "type" : "select"
+                     },                    
+                     "level" : {
+                        "label" : "",
+                        "optionLabels" : [
+                           "__off__",
+                           "__on__",
+                           "__toggle__"
+                        ]
+                     }
+                  }
+               }
+            },
+            "label" : "__binarysensors_label__",
+            "order" : 8
+         }         
       }
    },
    "repository" : {
@@ -215,7 +240,30 @@
                "type" : "object"
             },
             "type" : "array"
-         }         
+         },
+         "binarysensors" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_sensorBinary:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  },                  
+                  "level" : {
+                     "enum" : [
+                        "off",
+                        "on",
+                        "toggle"
+                     ],
+                     "required" : true,
+                     "type" : "integer"
+                  }
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         }           
       },
       "required" : true,
       "type" : "object"
