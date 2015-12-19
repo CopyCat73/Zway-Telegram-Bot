@@ -7,16 +7,14 @@ Zway Automation module for Telegram Bots
     - First go to https://core.telegram.org/bots#botfather and follow the instructions to create a new bot.
     - Create a new private channel
     - Add your bot as administrator to the channel (search for contacts and type the @botname)
-    After
-creating it, start a chat by sending some text to the bot. This will create a chat id which the module can find.
+    
+After creating it, start a chat by sending some text to the bot. This will create a chat id which the module can find.
 Enter the autorisation token you receive in the token field of the module preferences, plus your Telegram username.
 Select the devices you want to be alerted on. 
 
 # Current functionality
 
 This module is in testing! 
-
-# S
 
 # Sources
 

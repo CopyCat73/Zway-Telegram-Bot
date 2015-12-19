@@ -218,7 +218,7 @@ TelegramBot.prototype.sendMessage = function(message, keyboard) {
             url: url,
             async: true,
             success: function(response) {
-                console.log("[TelegramBot] message sent "+message);
+                //console.log("[TelegramBot] message sent "+message);
             },
             error: function(response) {
                 console.error("[TelegramBot] send message error");
@@ -327,7 +327,7 @@ TelegramBot.prototype.processResponse = function(response) {
                     case 'device':
                         var keyboardOptions = [];
                         self.controller.devices.forEach(function(device) {
-                            if (device.get('location')===self.roomSelected&&_.contains(['switchBinary', 'switchMultilevel'], device.get('deviceType'))) {
+                            if (device.get('location')==self.roomSelected&&_.contains(['switchBinary', 'switchMultilevel'], device.get('deviceType'))) {
                                 var oneRow = [];
                                 var devTitle = device.get('metrics:title');
                                 oneRow.push(devTitle);
@@ -347,7 +347,7 @@ TelegramBot.prototype.processResponse = function(response) {
                     case 'scene':
                         var keyboardOptions = [];
                         self.controller.devices.forEach(function(device) {
-                            if (device.get('location')===self.roomSelected&&_.contains(['toggleButton'], device.get('deviceType'))) {
+                            if (device.get('location')==self.roomSelected&&_.contains(['toggleButton'], device.get('deviceType'))) {
                                 var oneRow = [];
                                 var devTitle = device.get('metrics:title');
                                 oneRow.push(devTitle);
@@ -367,7 +367,7 @@ TelegramBot.prototype.processResponse = function(response) {
                     case 'sensor':
                         var sensorString = '';
                         self.controller.devices.forEach(function(device) {
-                            if (device.get('location')===self.roomSelected&&_.contains(['sensorBinary', 'sensorMultilevel'], device.get('deviceType'))) {
+                            if (device.get('location')==self.roomSelected&&_.contains(['sensorBinary', 'sensorMultilevel'], device.get('deviceType'))) {
                                 sensorString = sensorString+device.get('metrics:title') + ' : ' + device.get('metrics:level') + '\n';
                             }
                         });
