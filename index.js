@@ -73,7 +73,7 @@ TelegramBot.prototype.init = function (config) {
         return 'OK';
     };        
     
-    if (config.webhook_url.toString()!='') {
+    if (config.webhook_url!=undefined) {
         //ws.allowExternalAccess("Telegram", this.controller.auth.ROLE.USER);
         ws.allowExternalAccess("Telegram", this.controller.auth.ROLE.ANONYMOUS);
         self.setWebhook(config.webhook_url.toString());
@@ -192,8 +192,8 @@ TelegramBot.prototype.sendMessage = function(message, keyboard) {
             url: url,
             async: true,
             success: function(response) {
-                //self.chat_id = response.data.result[0].message.chat.id;
-                self.config.chat_id = response.data.result[0].message.chat.id;
+                //self.chat_id = response.data.result[0].channel_post.chat.id;
+                self.config.chat_id = response.data.result[0].channel_post.chat.id;
                 self.saveConfig();
                 self.sendMessage(message);
             },
